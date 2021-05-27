@@ -61,7 +61,7 @@ const ConverText_Html = (input_Text) => {
                     output_html += text_input[counter];
             }
         }
-        output_html += "<p/>";
+        output_html += "</p>";
     }
 
     while ((matchArray = Html_Regex.exec(input_Text)) !== null) {
