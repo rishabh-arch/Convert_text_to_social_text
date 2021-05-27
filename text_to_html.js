@@ -73,19 +73,19 @@ const ConverText_Html = (input_Text) => {
     if (urlArray.length > 0) {
         urlArray = urlArray.filter(uniqueString); //value,index,Array
         for (i = 0; urlArray.length - 1 >= i; i++) {
-            output_html = stringReplace(output_html, urlArray[i], `<a style="color:green;" href=${urlArray[i]} target=_blank>${urlArray[i]}</a>`)
+            output_html = stringReplace(output_html, urlArray[i], `<a style="color:green;" href=${urlArray[i]} target='_blank'>${urlArray[i]}</a>`)
         }
     }
     if (HashArray.length > 0) {
         HashArray = HashArray.filter(uniqueString); //value,index,Array
         for (i = 0; HashArray.length - 1 >= i; i++) {
-            output_html = stringReplace(output_html, HashArray[i], `<a style="color:red;" href=${HashArray[i]} target=_blank>${HashArray[i]}</a>`)
+            output_html = stringReplace(output_html, HashArray[i], `<a style="color:red;" href=/hashtag?search=${HashArray[i]} target='_blank'>${HashArray[i].slice(1)}</a>`)
         }
     }
     if (AtArray.length > 0) {
         AtArray = AtArray.filter(uniqueString); //value,index,Array
         for (i = 0; AtArray.length - 1 >= i; i++) {
-            output_html = stringReplace(output_html, AtArray[i], `<a style="color:yellow;" href=${AtArray[i]} target=_blank>${AtArray[i]}</a>`)
+            output_html = stringReplace(output_html, AtArray[i], `<a style="color:yellow;" href=/tag?search=${AtArray[i]} target='_blank'>${AtArray[i].slice(1)}</a>`)
         }
     }
     return output_html;
